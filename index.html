@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> Web Layout </title>
+
+<style>
+
+/* Container */
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Article */
+article {
+    padding: 20px;
+    width: 70%;
+    background-color: pink;
+    min-height: 300px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 30%;
+    background: pink;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar ul li a:hover {
+    background: lightblue;
+}
+
+/* Top Navigation */
+ul.nav {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: darkblue;
+}
+
+ul.nav li a {
+    display: block;
+    color: pink;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.nav li a:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+/* Header */
+header {
+    background-color: gray;
+    padding: 5px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: gray;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+/* Clearfix */
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h2> SDIHS </h2>
+    <h3 style="font-size: 18px;"> Santo Domingo Integrated High School </h3>
+</header>
+
+<!-- TOP NAVIGATION -->
+<ul class="nav">
+    <li> <a href="doc1.html"> Home </a> </li>
+    <li> <a href="doc2.html"> First Quarter </a> </li>
+    <li> <a href="doc3.html"> Second Quarter </a> </li>
+    <li> <a href="https://www.facebook.com/cindel.fernandez.2025?mibextid=ZbWKwL/"> About </a> </li>
+</ul>
+
+<section>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+        <ul>
+
+          <li> <a href="#" onclick="loadContent('content')"> Content </a> </li>
+            <li> <a href="#" onclick="loadContent('performance standard')"> Performance Standard </a> </li>
+            <li> <a href="#" onclick="loadContent('content standard')"> Content Standard </a> </li>
+       
+
+<li> <a href="#" onclick="loadContent('learning competencies')"> Learning Competencies </a> </li>
+
+<li> <a href="#" onclick="loadContent('objectives')"> Objectives </a> </li>
+ </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <article id="content">
+        <h1> Welcome SDIHS</h1>
+        <p>
+            Batang Santo likas na mabait,matalino at aktibo.
+School for talented students
+        </p>
+    </article>
+
+</div>
+
+</section>
+
+<footer>
+    <p> © Forth Year Students Batch 2025-2026</p>
+</footer>
+
+<script>
+
+function loadContent(section) {
+
+    const content = document.getElementById('content');
+
+if (section === 'content') {
+        content.innerHTML = `
+            <h2> Content </h2>
+           
+            <p>
+                Trends and Issues in ICT</p>
+        `;
+    }
+
+
+
+
+    if (section === 'content standard') {
+        content.innerHTML = `
+            <h2> Content Standard </h2>
+           
+            <p>Demonstrate an understanding of current trends and emerging issues in ICT
+                </p>
+        `;
+    }
+
+    else if (section === 'objectives') {
+        content.innerHTML = `
+            <h2> SHS </h2>
+            <p> Snigga  </p>
+
+        `;
+    }
+
+
+
+else if (section === 'learning competencies') {
+        content.innerHTML = `
+            <h2> Learning Competencies</h2>
+            <p> Discuss the emerging trends and issues in ICT  </p>
+
+        `;
+    }
+
+
+
+
+    else if (section === 'performance standard') {
+        content.innerHTML = `
+            <h2> Performance Standard </h2>
+            <p>the learners convert number system into practical scenarios  </p>
+      
+  `;
+    }
+}
+
+</script>
+
+</body>
+</html>
